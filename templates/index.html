@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<center>
+<head>
+    <title>Car Price Prediction</title>
+</head>
+<body>
+
+    <h2>Car Price Prediction</h2>
+
+    <form action="/predict" method="post">
+
+        {% for col in columns %}
+            <label>{{ col }}</label><br>
+            <input type="number" name="{{ col }}" step="any" required>
+            <br><br>
+        {% endfor %}
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <br>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+</body>
+</center>
+</html>
